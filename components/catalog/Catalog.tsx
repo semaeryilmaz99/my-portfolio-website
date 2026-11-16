@@ -146,8 +146,8 @@ export function Catalog({ pages, header, dock, a11y }: Props) {
       const tag = (e.target as HTMLElement).tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
       const map: Record<string, number> = {
-        ArrowRight: currentRef.current + 1, PageDown: currentRef.current + 1,
-        ArrowLeft: currentRef.current - 1, PageUp: currentRef.current - 1,
+        ArrowRight: currentRef.current + 1, ArrowDown: currentRef.current + 1, PageDown: currentRef.current + 1,
+        ArrowLeft: currentRef.current - 1, ArrowUp: currentRef.current - 1, PageUp: currentRef.current - 1,
         Home: 0, End: pages.length - 1,
       };
       if (e.key in map) { e.preventDefault(); goTo(map[e.key]); }

@@ -33,8 +33,8 @@ export function Lightbox({ media, index, locale, labels, onStep, onClose }: Prop
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
-      else if (e.key === 'ArrowRight' && n > 1) onStep(1);
-      else if (e.key === 'ArrowLeft' && n > 1) onStep(-1);
+      else if ((e.key === 'ArrowRight' || e.key === 'ArrowDown') && n > 1) onStep(1);
+      else if ((e.key === 'ArrowLeft' || e.key === 'ArrowUp') && n > 1) onStep(-1);
       else return;
       e.preventDefault();
       e.stopImmediatePropagation();
